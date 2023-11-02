@@ -44,14 +44,11 @@
                 
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="text" class="form-control" name="Email" >
+                <label for="exampleInputEmail1" class="form-label">Contacto</label>
+                <input type="text" class="form-control" name="Contacto" >
                 
             </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Numero</label>
-                <input type="text" class="form-control" name="Numero" >
-            </div>
+            
             
             <button type="submit" class="btn btn-primary" name="btnregister" value="ok" >Registrar</button>
             
@@ -65,8 +62,7 @@
                             <th scope="col">Apellido P  </th>
                             <th scope="col">Apellido M</th>
                             <th scope="col">Organizacion</th>
-                            <th scope="col">Email</th>      
-                            <th scope="col">Numero</th>      
+                            <th scope="col">Contacto</th>    
                             <th scope="col"></th>      
 
                             </tr>
@@ -77,13 +73,13 @@
                                 $sql = $conexion->query("select * from participantes");
                                 while($datos = $sql->fetch_object()){ ?>
                             <tr>
-                                <td><?= $datos->IDParticipante ?></td>
+                                <td><?= $datos->ID ?></td>
                                 <td><?= $datos->Nombre ?></td>
                                 <td><?= $datos->ApellidoPaterno ?></td>
                                 <td><?= $datos->ApellidoMaterno ?></td>
                                 <td><?= $datos->Organizacion ?></td>
-                                <td><?= $datos->Email ?></td>
-                                <td><?= $datos->Numero ?></td>
+                                <td><?= $datos->Contacto ?></td>
+                                
                                 
                             
                                 <td>
