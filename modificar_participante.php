@@ -1,5 +1,7 @@
 <?php
-
+    include "model/conexion.php";
+    $ID=$_GET["ID"];
+    $sql=$conexion->query(" select * from participantes where ID=$ID");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,33 +19,37 @@
 
 <h3 class="text-center text-secondary">Modificar participantes</h3>
 <?php
-           
-            ?>
+
+            while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="Nombre" >
+                <input type="text" class="form-control" name="Nombre" value="<?= $datos->Nombre?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
-                <input type="text" class="form-control" name="ApellidoPaterno" >
+                <input type="text" class="form-control" name="ApellidoPaterno" value="<?= $datos->ApellidoPaterno?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
-                <input type="text" class="form-control" name="ApellidoMaterno" >
+                <input type="text" class="form-control" name="ApellidoMaterno" value="<?= $datos->ApellidoMaterno?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Organizacion</label>
-                <input type="text" class="form-control" name="Organizacion" >
+                <input type="text" class="form-control" name="Organizacion" value="<?= $datos->Organizacion?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Contacto</label>
-                <input type="text" class="form-control" name="Contacto" >
+                <input type="text" class="form-control" name="Contacto" value="<?= $datos->Contacto?>" >
                 
             </div>
+
+            <?php }           
+            ?>
+            
     
             <button type="submit" class="btn btn-primary" name="" value="ok">Modificar</button>
     
