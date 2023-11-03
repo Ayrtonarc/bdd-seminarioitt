@@ -14,7 +14,7 @@
 <body>
 
 
-    <h1 class="text-center p-3">Hola mundo</h1>
+    <h1 class="text-center p-3">Inicio Index</h1>
     <div class="container-fluid row">
         <form class="col-4" p-3 method="POST">
 

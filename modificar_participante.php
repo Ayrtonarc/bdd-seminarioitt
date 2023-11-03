@@ -21,35 +21,31 @@
             ?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="Nombre">
-    
+                <input type="text" class="form-control" name="Nombre" >
+                
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apellido Paterno</label>
-                <input type="text" class="form-control" name="ApellidoPaterno">
-    
+                <input type="text" class="form-control" name="ApellidoPaterno" >
+                
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Apellido Materno</label>
-                <input type="text" class="form-control" name="ApellidoMaterno">
-    
+                <input type="text" class="form-control" name="ApellidoMaterno" >
+                
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Organizacion</label>
-                <input type="text" class="form-control" name="Organizacion">
-    
+                <input type="text" class="form-control" name="Organizacion" >
+                
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="text" class="form-control" name="Email">
-    
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Numero</label>
-                <input type="text" class="form-control" name="Numero">
+                <label for="exampleInputEmail1" class="form-label">Contacto</label>
+                <input type="text" class="form-control" name="Contacto" >
+                
             </div>
     
-            <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Registrar</button>
+            <button type="submit" class="btn btn-primary" name="" value="ok">Modificar</button>
     
         </form>
     </body>
