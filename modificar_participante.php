@@ -19,6 +19,7 @@
 
 <h3 class="text-center text-secondary">Modificar participantes</h3>
 <?php
+            include "controller/modificar_participante.php";
 
             while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
@@ -51,7 +52,7 @@
             ?>
             
     
-            <button type="submit" class="btn btn-primary" name="" value="ok">Modificar</button>
+            <button type="submit" class="btn btn-primary" name="btnregister" value="ok">Modificar</button>
     
         </form>
     </body>
