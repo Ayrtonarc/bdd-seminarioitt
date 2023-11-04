@@ -18,6 +18,7 @@
     <form class="col-4" p-3 method="POST">
 
 <h3 class="text-center text-secondary">Modificar participantes</h3>
+<input type="hidden" name="ID" value="<?=$_GET["ID"]?>">
 <?php
             include "controller/modificar_participante.php";
 
