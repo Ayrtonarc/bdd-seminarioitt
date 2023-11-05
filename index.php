@@ -12,15 +12,24 @@
 </head>
 
 <body>
-
+    <script>
+        function eliminar(){
+            var respuesta = confirm("Estas seguro que deseas eliminar?");
+            return respuesta
+        }
+    </script>
 
     <h1 class="text-center p-3">Inicio Index</h1>
+    <?php
+        include "model/conexion.php";
+        include "controller/eliminar_participantes.php";
+    ?>
     <div class="container-fluid row">
         <form class="col-4" p-3 method="POST">
 
             <h3 class="text-center text-secondary">Registro de participantes</h3>
             <?php 
-                include "model/conexion.php";
+                
                 include "controller/registro_participantes.php";
             ?>
             <div class="mb-3">
@@ -84,7 +93,7 @@
                             
                                 <td>
                                     <a href="modificar_participante.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                                    <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                    <a onclick="return eliminar()" href="index.php?ID=<?=$datos->ID?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                                 
