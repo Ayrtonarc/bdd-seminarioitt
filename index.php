@@ -180,7 +180,7 @@
                                 
                             
                                 <td>
-                                    <a href="modificar_participante.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="modificar_orador.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a onclick="return eliminar()" href="index.php?ID=<?=$datos->ID?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
