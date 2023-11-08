@@ -198,7 +198,104 @@
                             
                         </tbody>
             </table>
+        </div>
 
+
+        <div class="container-fluid row">
+        <form class="col-4" p-3 method="POST">
+
+            <h3 class="text-center text-secondary">Registro de Articulos</h3>
+            <?php 
+                
+                include "controller/registro_articulos.php";
+            ?>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Titulo Articulo</label>
+                <input type="text" class="form-control" name="TituloArticulo" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Autores</label>
+                <input type="text" class="form-control" name="Autores" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Revista Cientifica</label>
+                <input type="text" class="form-control" name="RevistaCientifica" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Anio Publicacion</label>
+                <input type="text" class="form-control" name="AnioPublicacion" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Numero Conacyt</label>
+                <input type="text" class="form-control" name="NumeroConacyt" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Abstract</label>
+                <input type="text" class="form-control" name="Abstract" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enlace</label>
+                <input type="text" class="form-control" name="Enlace" >
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary" name="registerart" value="ok" >Registrar Articulo</button>
+            
+        </form>
+        <div class="col-8 p-4">
+                    <table class="table">
+                        <thead class="bg-info">
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo Articulo</th>
+                            <th scope="col">Autores</th>
+                            <th scope="col">Revista Cientifica</th>
+                            <th scope="col">Anio Publicacion</th>
+                            <th scope="col">Numero Conahcyt</th>
+                            <th scope="col">Abstract</th>
+                            <th scope="col">Enlace</th>    
+                                 
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                include "model/conexion.php";
+                                $sql = $conexion->query("select * from articulo");
+                                while($datos = $sql->fetch_object()){ ?>
+                            <tr>
+                                <td><?= $datos->ID ?></td>
+                                <td><?= $datos->TituloArticulo ?></td>
+                                <td><?= $datos->Autores ?></td>
+                                <td><?= $datos->RevistaCientifica  ?></td>
+                                <td><?= $datos->AnioPublicacion ?></td>
+                                <td><?= $datos->NumeroConacyt ?></td>
+                                <td><?= $datos->Abstract ?></td>
+                                <td><?= $datos->Enlace  ?></td>
+                                
+                                
+                            
+                                <td>
+                                    <a href="modificar_articulo.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a onclick="" href="index.php?ID=<?=$datos->ID?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                                
+                            <?php }
+                            ?>
+
+
+                            
+                            
+                        </tbody>
+            </table>
+        </div>
 
 
 
