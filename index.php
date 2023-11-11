@@ -203,7 +203,7 @@
         
         <?php
         include "model/conexion.php";
-
+        include "controller/eliminar_articulos.php"
         ?>
         
         <div class="container-fluid row">
