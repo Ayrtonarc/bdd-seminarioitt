@@ -200,7 +200,12 @@
             </table>
         </div>
 
+        
+        <?php
+        include "model/conexion.php";
 
+        ?>
+        
         <div class="container-fluid row">
         <form class="col-4" p-3 method="POST">
 
@@ -259,7 +264,8 @@
                             <th scope="col">Anio Publicacion</th>
                             <th scope="col">Numero Conahcyt</th>
                             <th scope="col">Abstract</th>
-                            <th scope="col">Enlace</th>    
+                            <th scope="col">Enlace</th>
+                            <th scope="col"></th>     
                                  
 
                             </tr>

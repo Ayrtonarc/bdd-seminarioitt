@@ -1,7 +1,7 @@
 <?php
     include "model/conexion.php";
     $ID=$_GET["ID"];
-    $sql=$conexion->query(" select * from articulo where ID=$ID");
+    $sql=$conexion->query("select * from articulo where ID=$ID ");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,44 +18,44 @@
     <form class="col-4" p-3 method="POST">
 
 <h3 class="text-center text-secondary">Modificar Articulos</h3>
-<input type="hidden" name="ID" value="<?=$_GET["ID"]?>">
+<input type="text" name="ID" value="<?=$_GET["ID"]?>">
 <?php
             include "controller/modificar_articulos.php";
 
             while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Titulo Articulo</label>
-                <input type="text" class="form-control" name="TituloArticulo" >
+                <input type="text" class="form-control" name="TituloArticulo" value="<?= $datos->TituloArticulo ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Autores</label>
-                <input type="text" class="form-control" name="Autores" >
+                <input type="text" class="form-control" name="Autores" value="<?= $datos->Autores ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Revista Cientifica</label>
-                <input type="text" class="form-control" name="RevistaCientifica" >
+                <input type="text" class="form-control" name="RevistaCientifica" value="<?= $datos->RevistaCientifica ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Anio Publicacion</label>
-                <input type="text" class="form-control" name="AnioPublicacion" >
+                <input type="text" class="form-control" name="AnioPublicacion" value="<?= $datos->AnioPublicacion ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Numero Conacyt</label>
-                <input type="text" class="form-control" name="NumeroConacyt" >
+                <input type="text" class="form-control" name="NumeroConacyt" value="<?= $datos->NumeroConacyt ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Abstract</label>
-                <input type="text" class="form-control" name="Abstract" >
+                <input type="text" class="form-control" name="Abstract" value="<?= $datos->Abstract ?>" >
                 
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Enlace</label>
-                <input type="text" class="form-control" name="Enlace" >
+                <input type="text" class="form-control" name="Enlace" value="<?= $datos->Enlace ?>" >
             </div>
 
             <?php }           

@@ -1,13 +1,16 @@
 <?php
 if(!empty($_POST["btnmodarticulo"])){
-    if(!empty($_POST["Nombre"]) and !empty($_POST["ApellidoPaterno"]) and !empty($_POST["ApellidoMaterno"]) and !empty($_POST["Organizacion"]) and !empty($_POST["Contacto"]))    {
-        $id=$_POST["ID"];
-        $nombre=$_POST["Nombre"];
-        $apellidoPaterno=$_POST["ApellidoPaterno"];
-        $apellidoMaterno=$_POST["ApellidoMaterno"];
-        $organizacion=$_POST["Organizacion"];
-        $contacto=$_POST["Contacto"];
-        $sql=$conexion->query(" update orador set Nombre='$nombre', ApellidoPaterno='$apellidoPaterno', ApellidoMaterno='$apellidoMaterno', Organizacion ='$organizacion', Contacto ='$contacto' where ID=$ID ");
+    if(!empty($_POST["TituloArticulo"]) and !empty($_POST["Autores"]) and !empty($_POST["RevistaCientifica"]) and !empty($_POST["AnioPublicacion"]) and !empty($_POST["NumeroConacyt"]) and !empty($_POST["Abstract"]) and !empty($_POST["Enlace"]))    {
+        $ID=$_POST["ID"];
+        $TituloArticulo=$_POST["TituloArticulo"];
+        $Autores=$_POST["Autores"];
+        $RevistaCientifica=$_POST["RevistaCientifica"];
+        $AnioPublicacion=$_POST["AnioPublicacion"];
+        $NumeroConacyt=$_POST["NumeroConacyt"];
+        $Abstract=$_POST["Abstract"];
+        $Enlace=$_POST["Enlace"];
+
+        $sql=$conexion->query(" update articulo set TituloArticulo='$TituloArticulo', Autores='$Autores ', RevistaCientifica='$RevistaCientifica', AnioPublicacion ='$AnioPublicacion', NumeroConacyt='$NumeroConacyt', Abstract='$Abstract',Enlace='$Enlace'  where ID=$ID ");
         if($sql==1){
             header("location:index.php");
         }else{
