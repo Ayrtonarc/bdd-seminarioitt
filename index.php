@@ -304,6 +304,99 @@
         </div>
 
 
+        <div class="container-fluid row">
+        <form class="col-4" p-3 method="POST">
+
+            <h3 class="text-center text-secondary">Registro de Seminarios</h3>
+            <?php 
+                 include "controller/registro_seminarios.php";
+                
+            ?>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Titulo</label>
+                <input type="text" class="form-control" name="Titulo" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Descripcion</label>
+                <input type="text" class="form-control" name="Descripcion" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Fecha</label>
+                <input type="date" class="form-control" name="Fecha" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Lugar</label>
+                <input type="text" class="form-control" name="Lugar" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Id Articulo Expuesto</label>
+                <input type="number" class="form-control" name="ArticuloExpuesto" >
+                
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Id Presentador</label>
+                <input type="number" class="form-control" name="OradorPresentador" >
+                
+            </div>
+            
+            
+            
+            <button type="submit" class="btn btn-primary" name="registersem" value="ok" >Registrar Seminario</button>
+            
+        </form>
+        <div class="col-8 p-4">
+                    <table class="table">
+                        <thead class="bg-info">
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titulo </th>
+                            <th scope="col">Descripcion</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Lugar</th>
+                            <th scope="col">Id Articulo</th>
+                            <th scope="col">Id Orador</th>
+                            <th scope="col"></th>     
+                                 
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                include "model/conexion.php";
+                                $sql = $conexion->query("select * from seminario");
+                                while($datos = $sql->fetch_object()){ ?>
+                            <tr>
+                                <td><?= $datos->ID ?></td>
+                                <td><?= $datos->Titulo ?></td>
+                                <td><?= $datos->Descripcion?></td>
+                                <td><?= $datos->Fecha ?></td>
+                                <td><?= $datos->Lugar ?></td>
+                                <td><?= $datos->ArticuloExpuesto?></td>
+                                <td><?= $datos->OradorPresentador?></td>
+                                
+                                
+                            
+                                <td>
+                                    <a href="modificar_.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a onclick="" href="index.php?ID=<?=$datos->ID?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                                
+                            <?php }
+                            ?>
+
+
+                            
+                            
+                        </tbody>
+            </table>
+        </div>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
