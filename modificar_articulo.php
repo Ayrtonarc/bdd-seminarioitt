@@ -18,7 +18,7 @@
     <form class="col-4" p-3 method="POST">
 
 <h3 class="text-center text-secondary">Modificar Articulos</h3>
-<input type="text" name="ID" value="<?=$_GET["ID"]?>">
+<input type="hidden" name="ID" value="<?=$_GET["ID"]?>">
 <?php
             include "controller/modificar_articulos.php";
 

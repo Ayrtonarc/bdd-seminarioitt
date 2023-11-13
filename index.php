@@ -381,7 +381,7 @@
                                 
                             
                                 <td>
-                                    <a href="modificar_.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="modificar_seminario.php?ID=<?=$datos->ID?>" class="btn btn-small btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
                                     <a onclick="" href="index.php?ID=<?=$datos->ID?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
